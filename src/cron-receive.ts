@@ -52,7 +52,9 @@ const main = async () => {
     await fs.writeFile(filepath, json);
     count++;
   }
-  console.info(`Received ${count} message(s) from SNS`);
+  if (count > 0) {
+    console.info(`Received ${count} message(s) from SNS`);
+  }
 };
 
 main().catch((e) => {
